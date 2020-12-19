@@ -1,0 +1,47 @@
+@import "styles/sassSetup"
+
+.container
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin: .5em 0
+  border-bottom: 1px solid $accent-gray
+
+.questionContainer
+  display: flex
+  align-items: center
+  justify-content: space-between
+  cursor: pointer
+  p
+    transition: .3s
+    color: $accent-gray
+  .openAnswer
+    svg
+      height: 20px
+      width: 20px
+      transition: .3s
+      path
+        transition: .3s
+        fill: $accent-gray
+  &:hover
+    p
+      color: $accent
+    .openAnswer
+      svg
+        path
+          transition: .3s
+          fill: $accent
+
+.questionContainerActive
+  p
+    color: $accent
+  .openAnswer
+    svg
+      transform: rotate(180deg)
+      path
+        fill: $accent
+
+.answerContainer
+  padding: 1em
+  p
+    color: $accent-gray

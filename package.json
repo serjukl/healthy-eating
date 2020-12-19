@@ -3,13 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext js,jsx",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "sass-lint -v",
+    "lint:fix": "sass-lint-auto-fix",
+    "build:css": "postcss --use autoprefixer *.css"
   },
   "dependencies": {
+    "css-loader": "2.1.1",
     "next": "10.0.3",
+    "next-images": "^1.6.2",
+    "node-sass": "^5.0.0",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "sass-lint-auto-fix": "^0.21.2"
   }
 }
