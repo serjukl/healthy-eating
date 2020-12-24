@@ -5,7 +5,7 @@ const Faq = ({ item, openHandler, isOpen }) => (
   <div className={styles.container}>
     <div
       className={isOpen ? `${styles.questionContainer} ${styles.questionContainerActive}` : styles.questionContainer}
-      onClick={() => openHandler(isOpen === item.id.toString() ? null : item.id)}
+      onClick={() => openHandler(isOpen === item.id ? null : item.id)}
     >
       <p>
         {
