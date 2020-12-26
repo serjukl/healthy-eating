@@ -3,6 +3,11 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.sass'
 import Faq from '../components/FAQ/FAQ'
 import FlowerTitleSection from '../components/FlowerTitleSection/FlowerTitleSection'
+// eslint-disable-next-line import/extensions
+import Title from '../components/Title/Title'
+import InpData from "../components/InpData/InpData"
+import BoxData from "../components/BoxData/BoxData";
+import PhotoFood from "../components/PhotoFood/PhotoFood"
 
 const Home = () => {
   const [questionIsOpen, questionIsOpenHandler] = useState(null)
@@ -46,6 +51,11 @@ const Home = () => {
             innerTitles.map((title, key) => <FlowerTitleSection title={title} key={key} />)
           }
         </div>
+        <Title text='ВАШІ РЕЗУЛЬТАТИ' />
+        <Title text='ВІДПОВІДІ НА МОЖЛИВІ ПИТАННЯ' />
+        <Title text='Оберіть раціон який підходить саме Вам' />
+        <BoxData />
+        <PhotoFood />
       </div>
     </div>
   )
