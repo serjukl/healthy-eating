@@ -14,9 +14,7 @@ const PhotoFood = () => (
             <li>Звичні для організму продукти.</li>
             <li>Безпечно для організму.</li>
         </div>
-        <div className={styles.photo}>
-            <img src="/images/Rectangle 176.jpg" alt="/" />
-        </div>
+        <div className={styles.photo}/>
     </div>
 )
 
