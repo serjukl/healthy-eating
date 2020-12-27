@@ -8,6 +8,7 @@ import Title from '../components/Title/Title'
 import InpData from "../components/InpData/InpData"
 import BoxData from "../components/BoxData/BoxData";
 import PhotoFood from "../components/PhotoFood/PhotoFood"
+import Table from "../components/Table/Table";
 
 const Home = () => {
   const [questionIsOpen, questionIsOpenHandler] = useState(null)
@@ -56,6 +57,12 @@ const Home = () => {
         <Title text='Оберіть раціон який підходить саме Вам' />
         <BoxData />
         <PhotoFood />
+        <Table
+          index='24,5'
+          weight='45'
+          weightX='45'
+          calories='367'
+        />
       </div>
     </div>
   )
