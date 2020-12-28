@@ -1,0 +1,28 @@
+.box {
+  width: calc(100% + 4em);
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box h1 {
+  color: #545454;
+  font-size: 35px;
+}
+
+@media screen and (max-width: 800px) {
+  .box {
+    height: 50px;
+  }
+  .box h1 {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=Title.module.css.map */

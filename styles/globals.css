@@ -1,0 +1,15 @@
+/* autoprefixer grid: autoplace */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+}
+/*# sourceMappingURL=globals.css.map */
