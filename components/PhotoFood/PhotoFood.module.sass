@@ -12,19 +12,22 @@
   flex-direction: column
   justify-content: space-between
   align-items: center
-
-  div
-    height: 80px
-    width: calc(100% - 2em)
-    margin-right: 2em
-    margin-top: 40px
-    display: flex
-    align-items: center
-    justify-content: center
-    background-color: $accent
-    p
-      font-size: 30px
-      color: $accent-gray
+.titleBox
+  margin-right: 2em
+  margin-top: 40px
+  display: flex
+  padding: 1em 1.5em
+  align-items: center
+  justify-content: center
+  background-color: $accent
+  p
+    font-size: 30px
+    color: $accent-gray
+  
+.leftPart
+  display: flex
+  flex-direction: column
+  align-items: center
   li
     list-style: none
     font-size: 30px
@@ -41,6 +44,7 @@
   background-image: url("/images/Rectangle 176.jpg")
   background-repeat: no-repeat
   background-size: cover
+  background-position: center
   img
     height: 500px
     width: 100%
@@ -48,27 +52,44 @@
 @media screen and (max-width: 960px)
   .container
     width: 100%
-    flex-direction: column
+    flex-direction: column-reverse
     justify-content: space-between
     align-items: center
     height: auto
 
   .box
     width: 100%
-    div
-      height: auto
-      width: 100%
-      margin-right: 0
-      margin-top: 20px
-
-    li
-      font-size: 24px
-      margin-bottom: 20px
+  .titleBox
+    height: auto
+    width: 100%
+    margin-right: 0
+    margin-top: 0
+    p
+      padding: .5em
+      text-align: center
+    
+  .leftPart
+    flex-direction: row
+    justify-content: center
+    width: 100%
+    padding: 1em 0
+    ul
+      li
+        font-size: 16px
+        margin-bottom: 20px
 
   .image
     margin: 15px 0
 
   .photo
-    width: calc(100% + 4em)
+    width: 100%
     height: 500px
 
+
+@media screen and (max-width: 550px)
+  .leftPart
+    flex-direction: column
+  
+  .titleBox
+    p
+      font-size: 1.5em

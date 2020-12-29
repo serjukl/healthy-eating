@@ -1,3 +1,132 @@
+@import './sassSetup'
+
+.header
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+.rightPart
+  display: flex
+  justify-content: flex-end
+  .imageContainer
+    width: 400px
+    min-height: 100vh
+    background-image: url('../public/images/titlePhoto.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+  aside
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 2em 1em
+    background-color: $accent
+    .hamburger
+      cursor: pointer
+      display: flex
+      flex-direction: column
+      align-items: center
+      p
+        transition: .3s
+      svg
+        width: 40px
+        height: 40px
+        path
+          transition: .3s
+      &:hover
+        p
+          color: white
+        svg
+          path
+            fill: white
+    .socialContainer
+      display: flex
+      flex-direction: column
+      align-items: center
+      a
+        display: flex
+        svg
+          width: 40px
+          height: 40px
+          cursor: pointer
+          path
+            transition: .3s
+          &:hover
+            path
+              fill: white
+
+.menu
+  display: none
+.menuActive
+  display: block
+  position: fixed
+  z-index: 3
+  width: calc(100% - 78px)
+  left: 0
+  top: 0
+  height: 100vh
+  background-color: rgba(0,0,0 ,.8)
+  ul
+    display: flex
+    flex-direction: column
+    width: 100%
+    justify-content: space-around
+    height: 100%
+    li
+      width: 100%
+      text-align: center
+      a
+        color: white
+        text-decoration: none
+        text-align: center
+        width: 100%
+        padding: 1em
+        transition: .3s
+        &:hover
+          color: $accent
+
+.logoContainer
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  h1
+    font-weight: 300
+    font-size: 1.5em
+    line-height: 56px
+    letter-spacing: 0.125em
+    color: $accent
+  img
+    height: 70px
+    width: 70px
+
+.mainPhrase
+  font-weight: 900
+  font-size: 3.2em
+  line-height: 1.5em
+  color: $accent-gray
+  width: 600px
+  cursor: default
+
+.leftPart
+  width: 100%
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding-left: 2em
+  padding-top: 2em
+  p
+    font-size: 1.5em
+    width: 450px
+    color: $accent-gray
+    cursor: default
+
+.nextScreenContainer
+  display: flex
+  text-decoration: none
+  flex-direction: column
+  align-items: center
+  color: $accent-gray
+
 .FAQContainer
   display: flex
   align-items: center
@@ -13,6 +142,107 @@
   justify-content: space-between
   flex-wrap: wrap
 
-@media screen and (max-width: 1145px)
+.aboutRacion
+  background-color: $accent
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding: 2em
+  button
+    margin-top: 20px
+    border: 1px solid $contrast
+    padding: 1em 2em
+    color: $contrast
+    outline: 0
+    background-color: transparent
+    width: 250px
+  p
+    color: $contrast
+    font-size: 1.5em
+
+@media screen and (max-width: 1175px)
   .titleContainer
     justify-content: center
+
+
+@media screen and (max-width: 1145px)
+  .mainPhrase
+    font-size: 2.2em
+    line-height: 1.2em
+    width: 400px
+
+  .leftPart
+    p
+      font-size: 1.2em
+      width: 400px
+
+
+@media screen and (max-width: 935px)
+  .mainPhrase
+    font-size: 2.2em
+    line-height: 1.2em
+    width: 400px
+    background-color: rgba(255,255,255,.7)
+  .logoContainer
+    background-color: white
+    width: 300px
+    h1
+      font-size: 1em
+  .rightPart
+    width: 100%
+    aside
+      padding: 1em
+      background-color: $accent
+      .hamburger
+        p
+          font-size: .6em
+        svg
+          width: 30px
+          height: 30px
+      .socialContainer
+        display: flex
+        flex-direction: column
+        align-items: center
+        a
+          svg
+            width: 30px
+            height: 30px
+  .menuActive
+    width: calc(100% - 62px)
+
+  .nextScreenContainer
+    background-color: white
+    width: 200px
+
+  .leftPart
+    position: absolute
+    width: calc(100% - 62px)
+    p
+      font-size: 1.2em
+      width: 400px
+      background-color: rgba(255,255,255,.7)
+  .aboutRacion
+    padding: 1em
+    button
+      font-size: .9em
+      padding: .5em
+    p
+      color: $contrast
+      font-size: 1em
+@media screen and (max-width: 600px)
+  .logoContainer
+    width: 100%
+  .leftPart
+    padding-left: 0
+    padding-top: 0
+    p
+      font-size: 1.2em
+      width: 300px
+      display: none
+  .mainPhrase
+    font-size: 1.6em
+    line-height: 1.2em
+    width: 100%
+    padding: 0.5em
+    margin-top: 20px
+    
