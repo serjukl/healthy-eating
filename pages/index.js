@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.sass'
+import styles from '../styles/Home.module.css'
 import Faq from '../components/FAQ/FAQ'
 import FlowerTitleSection from '../components/FlowerTitleSection/FlowerTitleSection'
 import Title from '../components/Title/Title'
@@ -11,6 +11,8 @@ import Table from '../components/Table/Table'
 const Home = () => {
   const [questionIsOpen, questionIsOpenHandler] = useState(null)
   const [navIsOpen, navIsOpenHandler] = useState(false)
+  const [getResult, getResultHandler] = useState(null)
+
   const FAQestions = [
     {
       id: '0',
@@ -29,6 +31,7 @@ const Home = () => {
     'СМАЧНО ТА ЗБАЛАНСОВАНО ХАРЧУВАТИСЬ',
     'ПОДІЛИСЬ ІЗ БЛИЗЬКИМИ, АДЖЕ РАЦІОН ПІДІЙДЕ УСІЙ СІМ’Ї'
   ]
+
   return (
     <div>
       <Head>
@@ -123,14 +126,18 @@ const Home = () => {
         </button>
       </div>
       <Title text="Оберіть раціон який підходить саме Вам" />
-      <BoxData />
+      <BoxData getResultHandler={(value) => getResultHandler(value)} />
       <Title text="ВАШІ РЕЗУЛЬТАТИ" isColor />
-      <Table
-        index="24,5"
-        weight="45"
-        weightX="45"
-        calories="367"
-      />
+      {
+        getResult
+          ? <Table
+          index={getResult.IMT}
+          weight={getResult.idealWeight}
+          calories={getResult.calories}
+          caloriesWithSport={getResult.caloriesWithSport}
+        />
+          : null
+      }
       <Title text="ВІДПОВІДІ НА МОЖЛИВІ ПИТАННЯ" />
       <div className={styles.FAQContainer}>
         {

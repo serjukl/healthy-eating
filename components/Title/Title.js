@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Title.module.sass'
+import styles from './Title.module.css'
 
 const Title = ({isColor, text}) => (
   <div className={styles.box} style={{ backgroundColor: isColor ? 'rgba(236, 160, 72, .7)' : null }}>

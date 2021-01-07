@@ -1,0 +1,21 @@
+.box {
+  width: 100%;
+}
+
+.inp {
+  border: none;
+  border-bottom: 2px solid rgba(236, 160, 72, 0.7);
+  padding: 5px 0;
+  margin-top: 20px;
+  width: 350px;
+  font-size: 20px;
+  outline: none;
+  autocomplete: off;
+}
+
+@media screen and (max-width: 1150px) {
+  .inp {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=InpData.module.css.map */

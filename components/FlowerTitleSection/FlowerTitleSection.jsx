@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './FlowerTitleSection.module.sass'
+import styles from './FlowerTitleSection.module.css'
 
 const FlowerTitleSection = ({ title }) => (
   <div className={styles.container}>

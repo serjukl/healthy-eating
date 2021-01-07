@@ -1,5 +1,3 @@
-@import "styles/sassSetup"
-
 .box
   width: 100%
   display: flex
@@ -17,7 +15,24 @@
     font-size: 24px
     text-align: center
     margin: 40px 20px
-    color: $accent-gray
+    color: #545454
+
+.submitButton
+  padding: 1em 2em
+  background-color: transparent
+  border: 1px solid rgba(236, 160, 72, .7)
+  outline: 0
+  cursor: pointer
+  margin: 20px 0
+  transition: .3s
+  &:hover
+    background-color: rgba(236, 160, 72, .7)
+    color: white
+
+.btnContainer
+  display: flex
+  justify-content: center
+  width: 100%
 
 @media screen and (max-width: 1150px)
   .box
@@ -28,8 +43,8 @@
     height: auto
 
   .checkBox
-    width: 100%
+    width: calc(100% - 40px)
 
   .inpBox
-    width: 100%
+    width: calc(100% - 40px)
 

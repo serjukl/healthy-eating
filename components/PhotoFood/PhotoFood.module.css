@@ -1,0 +1,152 @@
+.container {
+  width: 100%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box {
+  width: calc(100% - 450px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titleBox {
+  margin-right: 2em;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em 1.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(236, 160, 72, 0.7);
+}
+
+.titleBox p {
+  font-size: 30px;
+  color: #545454;
+}
+
+.leftPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.leftPart li {
+  list-style: none;
+  font-size: 30px;
+  color: #545454;
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.image {
+  margin: 10px 0;
+}
+
+.photo {
+  width: 450px;
+  background-image: url("/images/Rectangle 176.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo img {
+  height: 500px;
+  width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+  }
+  .box {
+    width: 100%;
+  }
+  .titleBox {
+    height: auto;
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .titleBox p {
+    padding: .5em;
+    text-align: center;
+  }
+  .leftPart {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    padding: 1em 0;
+  }
+  .leftPart ul li {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .image {
+    margin: 15px 0;
+  }
+  .photo {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .leftPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .titleBox p {
+    font-size: 1.5em;
+  }
+}
+/*# sourceMappingURL=PhotoFood.module.css.map */

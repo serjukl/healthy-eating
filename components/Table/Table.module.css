@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  margin-top: 2em;
+  border-left: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: 2px solid rgba(236, 160, 72, 0.7);
+}
+
+.container div {
+  outline: 1px solid rgba(236, 160, 72, 0.7);
+}
+
+.leftBox {
+  width: 80%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.leftBox div {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: none;
+  border-top: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.leftBox p {
+  font-size: 24px;
+  padding-left: 5px;
+  color: #545454;
+}
+
+.heading {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rightBox {
+  width: 20%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.rightBox div {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.rightBox p {
+  font-size: 24px;
+  color: rgba(236, 160, 72, 0.7);
+  font-weight: bold;
+}
+
+.headingRight p {
+  color: #545454;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 950px) {
+  .leftBox div {
+    height: 40px;
+  }
+  .leftBox div p {
+    font-size: 16px;
+  }
+  .rightBox div {
+    height: 40px;
+  }
+  .rightBox div p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 100%;
+    height: auto;
+  }
+  .leftBox {
+    width: 65%;
+  }
+  .leftBox div {
+    height: 30px;
+  }
+  .leftBox div p {
+    font-size: 12px;
+  }
+  .rightBox {
+    width: 35%;
+  }
+  .rightBox div {
+    height: 30px;
+  }
+  .rightBox div p {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=Table.module.css.map */

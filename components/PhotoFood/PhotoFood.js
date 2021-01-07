@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './PhotoFood.module.sass'
+import styles from './PhotoFood.module.css'
 
 const PhotoFood = () => (
   <div className={styles.container}>

@@ -1,3 +1,237 @@
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rightPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.rightPart .imageContainer {
+  width: 400px;
+  min-height: 100vh;
+  background-image: url("../public/images/titlePhoto.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rightPart aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em 1em;
+  background-color: rgba(236, 160, 72, 0.7);
+}
+
+.rightPart aside .hamburger {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rightPart aside .hamburger p {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.rightPart aside .hamburger svg {
+  width: 40px;
+  height: 40px;
+}
+
+.rightPart aside .hamburger svg path {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.rightPart aside .hamburger:hover p {
+  color: white;
+}
+
+.rightPart aside .hamburger:hover svg path {
+  fill: white;
+}
+
+.rightPart aside .socialContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rightPart aside .socialContainer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rightPart aside .socialContainer a svg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.rightPart aside .socialContainer a svg path {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.rightPart aside .socialContainer a svg:hover path {
+  fill: white;
+}
+
+.menu {
+  display: none;
+}
+
+.menuActive {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  width: calc(100% - 78px);
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menuActive ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+}
+
+.menuActive ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.menuActive ul li a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.menuActive ul li a:hover {
+  color: rgba(236, 160, 72, 0.7);
+}
+
+.logoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logoContainer h1 {
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 56px;
+  letter-spacing: 0.125em;
+  color: rgba(236, 160, 72, 0.7);
+}
+
+.logoContainer img {
+  height: 70px;
+  width: 70px;
+}
+
+.mainPhrase {
+  font-weight: 900;
+  font-size: 3.2em;
+  line-height: 1.5em;
+  color: #545454;
+  width: 600px;
+  cursor: default;
+}
+
+.leftPart {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 2em;
+  padding-top: 2em;
+}
+
+.leftPart p {
+  font-size: 1.5em;
+  width: 450px;
+  color: #545454;
+  cursor: default;
+}
+
+.nextScreenContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #545454;
+}
+
 .FAQContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,11 +265,148 @@
       flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1145px) {
+.aboutRacion {
+  background-color: rgba(236, 160, 72, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 2em;
+}
+
+.aboutRacion button {
+  margin-top: 20px;
+  border: 1px solid #fff;
+  padding: 1em 2em;
+  color: #fff;
+  outline: 0;
+  background-color: transparent;
+  width: 250px;
+}
+
+.aboutRacion p {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 1175px) {
   .titleContainer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1145px) {
+  .mainPhrase {
+    font-size: 2.2em;
+    line-height: 1.2em;
+    width: 400px;
+  }
+  .leftPart p {
+    font-size: 1.2em;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .mainPhrase {
+    font-size: 2.2em;
+    line-height: 1.2em;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .logoContainer {
+    background-color: white;
+    width: 300px;
+  }
+  .logoContainer h1 {
+    font-size: 1em;
+  }
+  .rightPart {
+    width: 100%;
+  }
+  .rightPart aside {
+    padding: 1em;
+    background-color: rgba(236, 160, 72, 0.7);
+  }
+  .rightPart aside .hamburger p {
+    font-size: .6em;
+  }
+  .rightPart aside .hamburger svg {
+    width: 30px;
+    height: 30px;
+  }
+  .rightPart aside .socialContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .rightPart aside .socialContainer a svg {
+    width: 30px;
+    height: 30px;
+  }
+  .menuActive {
+    width: calc(100% - 62px);
+  }
+  .nextScreenContainer {
+    background-color: white;
+    width: 200px;
+  }
+  .leftPart {
+    position: absolute;
+    width: calc(100% - 62px);
+  }
+  .leftPart p {
+    font-size: 1.2em;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .aboutRacion {
+    padding: 1em;
+  }
+  .aboutRacion button {
+    font-size: .9em;
+    padding: .5em;
+  }
+  .aboutRacion p {
+    color: #fff;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logoContainer {
+    width: 100%;
+  }
+  .leftPart {
+    padding-left: 0;
+    padding-top: 0;
+  }
+  .leftPart p {
+    font-size: 1.2em;
+    width: 300px;
+    display: none;
+  }
+  .mainPhrase {
+    font-size: 1.6em;
+    line-height: 1.2em;
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

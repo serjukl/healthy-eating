@@ -1,11 +1,10 @@
-@import "styles/sassSetup"
 
 .container
   display: flex
   flex-direction: column
   width: 100%
   margin: .5em 0
-  border-bottom: 1px solid $accent-gray
+  border-bottom: 1px solid #545454
 
 .questionContainer
   display: flex
@@ -14,7 +13,7 @@
   cursor: pointer
   p
     transition: .3s
-    color: $accent-gray
+    color: #545454
     font-size: 1.2em
   .openAnswer
     svg
@@ -23,27 +22,27 @@
       transition: .3s
       path
         transition: .3s
-        fill: $accent-gray
+        fill: #545454
   &:hover
     p
-      color: $accent
+      color: rgba(236, 160, 72, .7)
     .openAnswer
       svg
         path
           transition: .3s
-          fill: $accent
+          fill: rgba(236, 160, 72, .7)
 
 .questionContainerActive
   p
-    color: $accent
+    color: rgba(236, 160, 72, .7)
     font-size: 1.2em
   .openAnswer
     svg
       transform: rotate(180deg)
       path
-        fill: $accent
+        fill: rgba(236, 160, 72, .7)
 
 .answerContainer
   padding: 1em
   p
-    color: $accent-gray
+    color: #545454

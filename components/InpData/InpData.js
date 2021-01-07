@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './InpData.module.sass'
+import styles from './InpData.module.css'
 
 const InpData = (props) => (
   <div className={styles.box}>
-    <input type="text" placeholder={props.text} className={styles.inp} name={props.name}/>
+    <input type="text" onChange={(e) => props.onChangeHandler(e)}  placeholder={props.text} className={styles.inp} name={props.name}/>
   </div>
 )
 

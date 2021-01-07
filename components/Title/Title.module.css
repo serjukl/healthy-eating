@@ -1,6 +1,7 @@
 .box {
-  width: calc(100% + 4em);
-  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,13 +15,12 @@
 
 .box h1 {
   color: #545454;
-  font-size: 35px;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (max-width: 800px) {
-  .box {
-    height: 50px;
-  }
   .box h1 {
     font-size: 16px;
   }

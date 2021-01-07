@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './FAQ.module.sass'
+import styles from './FAQ.module.css'
 
 const Faq = ({ item, openHandler, isOpen }) => (
   <div className={styles.container}>
