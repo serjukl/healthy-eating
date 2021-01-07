@@ -5,6 +5,24 @@
   display: flex
   justify-content: space-between
 
+.btnContainer
+  display: flex
+  align-items: center
+  justify-content: space-around
+  flex-wrap: wrap
+  button
+    min-width: 300px
+    padding: 1em 2em
+    background-color: transparent
+    border: 1px solid rgba(236, 160, 72, .7)
+    outline: 0
+    cursor: pointer
+    margin: 20px 10px
+    transition: .3s
+    &:hover
+      background-color: rgba(236, 160, 72, .7)
+      color: white
+
 .rightPart
   display: flex
   justify-content: flex-end

@@ -1,9 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAAA,kCAAkC;AAGlC,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,oBAAoB;EACjC,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,eAAe,EAAE,MAAM;CAAG;;AAE5B,AAAA,IAAI,CAAC;EACH,gBAAgB,ECVP,IAAI;CDUiB",
+    "mappings": "AAAA,kCAAkC;AAElC,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,oBAAoB;EACjC,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,eAAe,EAAE,MAAM;CAAG;;AAE5B,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,IAAI;CAAG",
     "sources": [
-        "globals.css",
-        "sassSetup.css"
+        "globals.sass"
     ],
     "names": [],
     "file": "globals.css"

@@ -64,12 +64,29 @@ const BoxData = ({ getResultHandler }) => {
   }
 
   const calcMyValues = () => {
+    if(!inputVal.weight) {
+      alert('Вкажіть вашу вагу')
+      return false
+    }
+    if(!inputVal.height) {
+      alert('Вкажіть ваш ріст')
+      return false
+    }
+    if(!inputVal.age) {
+      alert('Вкажіть ваш вік')
+      return false
+    }
+    if(!checked) {
+      alert('Вкажіть вашу фізичну активність')
+      return false
+    }
     getResultHandler({
       IMT: Math.round(inputVal.weight / ((inputVal.height / 100) * (inputVal.height / 100))),
       idealWeight: idealWeightHandler(),
       calories: Math.round(447.6 + (9.2 * inputVal.weight) + (3.1 * inputVal.height) - (4.3 * inputVal.age)),
       caloriesWithSport: caloriesWithSportHandler()
     })
+    window.location = '#result'
   }
 
   useEffect(() => {

@@ -52,7 +52,7 @@ const Home = () => {
             збалансованому плану харчування.
           </p>
           <a href="" className={styles.nextScreenContainer}>
-          Дізнатись більше
+            Дізнатись більше
             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.38336 15.4054C8.45217 15.5051 8.54423 15.5866 8.65163 15.6429C8.75903 15.6993 8.87853 15.7287 8.99986 15.7287C9.12119 15.7287 9.2407 15.6993 9.34809 15.6429C9.45549 15.5866 9.54756 15.5051 9.61636 15.4054L16.3664 5.67652C16.4445 5.5643 16.4903 5.43287 16.4988 5.2965C16.5074 5.16013 16.4783 5.02403 16.4147 4.90299C16.3512 4.78196 16.2556 4.68062 16.1384 4.60998C16.0212 4.53934 15.8868 4.50211 15.7499 4.50232H2.24986C2.11324 4.50288 1.97936 4.5406 1.86262 4.61141C1.74588 4.68221 1.65069 4.78344 1.58729 4.90419C1.52389 5.02495 1.49467 5.16066 1.50279 5.29674C1.51091 5.43282 1.55605 5.56412 1.63336 5.67652L8.38336 15.4054Z" fill="#545454" />
             </svg>
@@ -63,17 +63,17 @@ const Home = () => {
           <nav className={navIsOpen ? `${styles.menu} ${styles.menuActive}` : styles.menu}>
             <ul>
               <li>
-                <a href="">
+                <a onClick={() => navIsOpenHandler(false)} href="#pluses">
                   Переваги раціону
                 </a>
               </li>
               <li>
-                <a href="">
+                <a onClick={() => navIsOpenHandler(false)} href="#racion">
                   Обрати раціон
                 </a>
               </li>
               <li>
-                <a href="">
+                <a onClick={() => navIsOpenHandler(false)} href="#questions">
                   Питання та відповіді
                 </a>
               </li>
@@ -106,6 +106,7 @@ const Home = () => {
       </header>
       <Title text="Правильне харчування дозволить нам бути здоровими та красивими." />
       <PhotoFood />
+      <div id="pluses" />
       <Title text="Після отримання раціону ти зможеш" />
       <div className={styles.titleContainer}>
         {
@@ -125,19 +126,30 @@ const Home = () => {
           ІЗ РАЦІОНОМ
         </button>
       </div>
+      <div id="racion" />
       <Title text="Оберіть раціон який підходить саме Вам" />
       <BoxData getResultHandler={(value) => getResultHandler(value)} />
+      <div id="result" />
       <Title text="ВАШІ РЕЗУЛЬТАТИ" isColor />
       {
         getResult
-          ? <Table
-          index={getResult.IMT}
-          weight={getResult.idealWeight}
-          calories={getResult.calories}
-          caloriesWithSport={getResult.caloriesWithSport}
-        />
+          ? (
+            <>
+              <Table
+              index={getResult.IMT}
+              weight={getResult.idealWeight}
+              calories={getResult.calories}
+              caloriesWithSport={getResult.caloriesWithSport}
+            />
+            <div className={styles.btnContainer}>
+              <button>Хочу підтримувати вагу</button>
+              <button>Хочу схуднути</button>
+            </div>
+            </>
+          )
           : null
       }
+      <div id="questions" />
       <Title text="ВІДПОВІДІ НА МОЖЛИВІ ПИТАННЯ" />
       <div className={styles.FAQContainer}>
         {
