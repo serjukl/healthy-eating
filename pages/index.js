@@ -155,7 +155,7 @@ const Home = () => {
                   description="Payment for product"
                   currency="UAH"
                   orderId={Math.floor(1 + Math.random() * 900000000)}
-                  result_url="http:///recipe1600"
+                  result_url="https://foodcoachiryna.com.ua/recipe1600"
                   server_url="https://www.liqpay.ua/checkout/i58423322834"
                   product_description="Online courses"
                   style={{ margin: "8px" }}
