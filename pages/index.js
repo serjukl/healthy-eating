@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import { getDisplayName } from 'next/dist/next-server/lib/utils'
+import { LiqPayPay, LiqPaySubscribe } from "react-liqpay"
 import styles from '../styles/Home.module.css'
 import Faq from '../components/FAQ/FAQ'
 import FlowerTitleSection from '../components/FlowerTitleSection/FlowerTitleSection'
@@ -29,8 +31,9 @@ const Home = () => {
     'СХУДНУТИ БЕЗ ДІЄТ ТА ВЕЛИКИХ ЗУСИЛЬ',
     'НЕ ПОТРІБНО ВІДМОВЛЯТИСЬ ВІД УЛЮБЛЕНОЇ ЇЖІ',
     'СМАЧНО ТА ЗБАЛАНСОВАНО ХАРЧУВАТИСЬ',
-    'ПОДІЛИСЬ ІЗ БЛИЗЬКИМИ, АДЖЕ РАЦІОН ПІДІЙДЕ УСІЙ СІМ’Ї'
+    'ПОДІЛИТИСЬ ІЗ БЛИЗЬКИМИ, АДЖЕ РАЦІОН ПІДІЙДЕ УСІЙ СІМ’Ї'
   ]
+
 
   return (
     <div>
@@ -136,15 +139,29 @@ const Home = () => {
           ? (
             <>
               <Table
-              index={getResult.IMT}
-              weight={getResult.idealWeight}
-              calories={getResult.calories}
-              caloriesWithSport={getResult.caloriesWithSport}
-            />
-            <div className={styles.btnContainer}>
-              <button>Хочу підтримувати вагу</button>
-              <button>Хочу схуднути</button>
-            </div>
+                index={getResult.IMT}
+                weight={getResult.idealWeight}
+                calories={getResult.calories}
+                caloriesWithSport={getResult.caloriesWithSport}
+              />
+              <div className={styles.btnContainer}>
+                <button>Хочу підтримувати вагу</button>
+                <button>Хочу схуднути</button>
+                
+                <LiqPayPay
+                  publicKey={'sandbox_i39047898628'}
+                  privateKey={'sandbox_KKI5zgxZUbKFhSMNamE1ekbFL9faSYy36PXuDVpF'}
+                  amount="1"
+                  description="Payment for product"
+                  currency="UAH"
+                  orderId={Math.floor(1 + Math.random() * 900000000)}
+                  result_url="http:///recipe1600"
+                  server_url="https://www.liqpay.ua/checkout/i58423322834"
+                  product_description="Online courses"
+                  style={{ margin: "8px" }}
+                  title={'Оплатити'}
+                />
+              </div>
             </>
           )
           : null
