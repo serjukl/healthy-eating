@@ -21,6 +21,11 @@
       flex-wrap: wrap;
 }
 
+.calNeed {
+  text-align: center;
+  font-size: 20px;
+}
+
 .btnContainer button {
   min-width: 300px;
   padding: 1em 2em;
@@ -35,7 +40,7 @@
 
 .btnContainer button:hover {
   background-color: rgba(236, 160, 72, 0.7);
-  color: white;
+  color: darkgoldenrod;
 }
 
 .rightPart {
@@ -46,7 +51,18 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-
+.giftContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+  align-items: center;
+}
+.giftContainer p{
+  color: rgba(236, 160, 72, 0.7);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
 .rightPart .imageContainer {
   width: 400px;
   min-height: 100vh;
@@ -419,6 +435,13 @@
 }
 
 @media screen and (max-width: 600px) {
+  .giftContainer {
+    flex-direction: column;
+  }
+  .giftContainer p{
+    font-size: 16px;
+  }
+  
   .logoContainer {
     width: 100%;
   }

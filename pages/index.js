@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { getDisplayName } from 'next/dist/next-server/lib/utils'
-import { LiqPayPay, LiqPaySubscribe } from "react-liqpay"
+import { LiqPayPay, LiqPaySubscribe } from 'react-liqpay'
 import styles from '../styles/Home.module.css'
 import Faq from '../components/FAQ/FAQ'
 import FlowerTitleSection from '../components/FlowerTitleSection/FlowerTitleSection'
@@ -14,6 +14,8 @@ const Home = () => {
   const [questionIsOpen, questionIsOpenHandler] = useState(null)
   const [navIsOpen, navIsOpenHandler] = useState(false)
   const [getResult, getResultHandler] = useState(null)
+  const [getMenu, getMenuHandler] = useState(null)
+  const [typeMenu, typeMenuHandler] = useState(null)
 
   const FAQestions = [
     {
@@ -33,8 +35,37 @@ const Home = () => {
     'СМАЧНО ТА ЗБАЛАНСОВАНО ХАРЧУВАТИСЬ',
     'ПОДІЛИТИСЬ ІЗ БЛИЗЬКИМИ, АДЖЕ РАЦІОН ПІДІЙДЕ УСІЙ СІМ’Ї'
   ]
-
-
+  const checkPercent = (calories) => {
+    if (calories > 1550) {
+      return 1600
+    }
+    if (calories > 1450 && calories < 1550) {
+      return 1500
+    }
+    if (calories > 1350 && calories < 1450) {
+      return 1400
+    }
+    if (calories > 1250 && calories < 1350) {
+      return 1300
+    }
+    if (calories > 1150 && calories < 1250) {
+      return 1200
+    }
+  }
+  const getTypeMenu = (arr) => {
+    getMenuHandler(arr)
+    const calories = (getResult.caloriesWithSport.value - (getResult.caloriesWithSport.value / 100 * 20))
+    const result = checkPercent(calories)
+    if (arr === 1) {
+      typeMenuHandler(+result - 100)
+    }
+    if (arr === 0) {
+      typeMenuHandler(result)
+    }
+    console.log(typeMenu)
+    
+  }
+  
   return (
     <div>
       <Head>
@@ -54,7 +85,7 @@ const Home = () => {
             Отримайте хороший результат завдяки
             збалансованому плану харчування.
           </p>
-          <a href="" className={styles.nextScreenContainer}>
+          <a href="#nextScreen" className={styles.nextScreenContainer}>
             Дізнатись більше
             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.38336 15.4054C8.45217 15.5051 8.54423 15.5866 8.65163 15.6429C8.75903 15.6993 8.87853 15.7287 8.99986 15.7287C9.12119 15.7287 9.2407 15.6993 9.34809 15.6429C9.45549 15.5866 9.54756 15.5051 9.61636 15.4054L16.3664 5.67652C16.4445 5.5643 16.4903 5.43287 16.4988 5.2965C16.5074 5.16013 16.4783 5.02403 16.4147 4.90299C16.3512 4.78196 16.2556 4.68062 16.1384 4.60998C16.0212 4.53934 15.8868 4.50211 15.7499 4.50232H2.24986C2.11324 4.50288 1.97936 4.5406 1.86262 4.61141C1.74588 4.68221 1.65069 4.78344 1.58729 4.90419C1.52389 5.02495 1.49467 5.16066 1.50279 5.29674C1.51091 5.43282 1.55605 5.56412 1.63336 5.67652L8.38336 15.4054Z" fill="#545454" />
@@ -107,6 +138,7 @@ const Home = () => {
           </aside>
         </div>
       </header>
+      <div id="nextScreen" />
       <Title text="Правильне харчування дозволить нам бути здоровими та красивими." />
       <PhotoFood />
       <div id="pluses" />
@@ -124,11 +156,19 @@ const Home = () => {
           Меню збалансоване ,складає всі необхідні для організму речовини,
           і тому не забороняється людям із захворюваннями , вагітним і годуючим.
         </p>
-        <button type="button">
+        {/* <button type="button">
           ОЗНАЙОМИТИСЬ
           ІЗ РАЦІОНОМ
-        </button>
+        </button> */}
       </div>
+      <div className={styles.giftContainer}>
+        <svg width="200" height="200" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M160 894C160 911.7 174.3 926 192 926H478V550H160V894ZM546 926H832C849.7 926 864 911.7 864 894V550H546V926ZM880 310H732.4C746 288.6 754 263.2 754 236C754 159.9 692.1 98 616 98C574.6 98 537.3 116.4 512 145.4C486.7 116.4 449.4 98 408 98C331.9 98 270 159.9 270 236C270 263.2 277.9 288.6 291.6 310H144C126.3 310 112 324.3 112 342V482H478V310H546V482H912V342C912 324.3 897.7 310 880 310ZM478 306H408C369.4 306 338 274.6 338 236C338 197.4 369.4 166 408 166C446.6 166 478 197.4 478 236V306ZM616 306H546V236C546 197.4 577.4 166 616 166C654.6 166 686 197.4 686 236C686 274.6 654.6 306 616 306Z" fill="rgba(236, 160, 72, .7)"/>
+        </svg>
+
+        <p>В подарунок Ви отримаєте гайд 'Гормони щастя'</p>
+      </div>
+
       <div id="racion" />
       <Title text="Оберіть раціон який підходить саме Вам" />
       <BoxData getResultHandler={(value) => getResultHandler(value)} />
@@ -145,23 +185,46 @@ const Home = () => {
                 caloriesWithSport={getResult.caloriesWithSport}
               />
               <div className={styles.btnContainer}>
-                <button>Хочу підтримувати вагу</button>
-                <button>Хочу схуднути</button>
-                
-                <LiqPayPay
-                  publicKey={'sandbox_i39047898628'}
-                  privateKey={'sandbox_KKI5zgxZUbKFhSMNamE1ekbFL9faSYy36PXuDVpF'}
-                  amount="1"
-                  description="Payment for product"
-                  currency="UAH"
-                  orderId={Math.floor(1 + Math.random() * 900000000)}
-                  result_url="https://foodcoachiryna.com.ua/recipe1600"
-                  server_url="https://www.liqpay.ua/checkout/i58423322834"
-                  product_description="Online courses"
-                  style={{ margin: "8px" }}
-                  title={'Оплатити'}
-                />
+                <button
+                  type="button"
+                  onClick={() => getTypeMenu(0)}
+                  style={{ backgroundColor: getMenu === 0 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                >
+                  Хочу підтримувати вагу
+                </button>
+                <button
+                  type="button"
+                  onClick={() => getTypeMenu(1)}
+                  style={{ backgroundColor: getMenu === 1 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                >
+                  Хочу схуднути
+                </button>
+                {
+                  getMenu !== null
+                    ? (
+                      <LiqPayPay
+                        publicKey="sandbox_i39047898628"
+                        privateKey="sandbox_KKI5zgxZUbKFhSMNamE1ekbFL9faSYy36PXuDVpF"
+                        amount="499"
+                        description="Payment for product"
+                        currency="UAH"
+                        orderId={Math.floor(1 + Math.random() * 900000000)}
+                        result_url={`https://foodcoachiryna.com.ua/recipe${typeMenu}`}
+                        server_url="https://www.liqpay.ua/checkout/i58423322834"
+                        product_description="Online courses"
+                        style={{ margin: '8px' }}
+                        title="Оплатити"
+                      />
+                    )
+                    : null
+                }
+
               </div>
+              {
+                typeMenu
+                  ? <p className={styles.calNeed}>{`При вказаних вище параметрах Вам необхідно дотримуватись раціону в ${typeMenu} калоріях`}</p>
+                  : null
+              }
             </>
           )
           : null

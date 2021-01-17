@@ -1,11 +1,15 @@
 import React from 'react'
+import styles from '../styles/recipes.module.sass'
 
 const recipe1600 = () => {
-    console.log();
     return (
-        <div>
-          Увага збережіть даний файл, адже він доступний у єдиному екземплярі
-          <a href="/1600.pdf" download>завантажити</a>
+        <div className={styles.giveResipe}>
+          <p>Увага збережіть даний файл, адже він доступний у єдиному екземплярі</p>
+          <a href="/1600.pdf" download>Завантажити</a>
+          <p>
+            Подарунковий гайд 'Гормони щастя'
+          </p>
+          <a href="/present.pdf" download>Завантажити</a>
         </div>
       )
 }
