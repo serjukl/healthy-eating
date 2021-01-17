@@ -1,7 +1,7 @@
+/* eslint-disable consistent-return */
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { getDisplayName } from 'next/dist/next-server/lib/utils'
-import { LiqPayPay, LiqPaySubscribe } from 'react-liqpay'
+import { LiqPayPay } from 'react-liqpay'
 import styles from '../styles/Home.module.css'
 import Faq from '../components/FAQ/FAQ'
 import FlowerTitleSection from '../components/FlowerTitleSection/FlowerTitleSection'
@@ -54,7 +54,8 @@ const Home = () => {
   }
   const getTypeMenu = (arr) => {
     getMenuHandler(arr)
-    const calories = (getResult.caloriesWithSport.value - (getResult.caloriesWithSport.value / 100 * 20))
+    const caloriesTemp = getResult.caloriesWithSport.value
+    const calories = (caloriesTemp - ((caloriesTemp / 100) * 20))
     const result = checkPercent(calories)
     if (arr === 1) {
       typeMenuHandler(+result - 100)
@@ -62,10 +63,8 @@ const Home = () => {
     if (arr === 0) {
       typeMenuHandler(result)
     }
-    console.log(typeMenu)
-    
   }
-  
+
   return (
     <div>
       <Head>
@@ -163,10 +162,10 @@ const Home = () => {
       </div>
       <div className={styles.giftContainer}>
         <svg width="200" height="200" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M160 894C160 911.7 174.3 926 192 926H478V550H160V894ZM546 926H832C849.7 926 864 911.7 864 894V550H546V926ZM880 310H732.4C746 288.6 754 263.2 754 236C754 159.9 692.1 98 616 98C574.6 98 537.3 116.4 512 145.4C486.7 116.4 449.4 98 408 98C331.9 98 270 159.9 270 236C270 263.2 277.9 288.6 291.6 310H144C126.3 310 112 324.3 112 342V482H478V310H546V482H912V342C912 324.3 897.7 310 880 310ZM478 306H408C369.4 306 338 274.6 338 236C338 197.4 369.4 166 408 166C446.6 166 478 197.4 478 236V306ZM616 306H546V236C546 197.4 577.4 166 616 166C654.6 166 686 197.4 686 236C686 274.6 654.6 306 616 306Z" fill="rgba(236, 160, 72, .7)"/>
+          <path d="M160 894C160 911.7 174.3 926 192 926H478V550H160V894ZM546 926H832C849.7 926 864 911.7 864 894V550H546V926ZM880 310H732.4C746 288.6 754 263.2 754 236C754 159.9 692.1 98 616 98C574.6 98 537.3 116.4 512 145.4C486.7 116.4 449.4 98 408 98C331.9 98 270 159.9 270 236C270 263.2 277.9 288.6 291.6 310H144C126.3 310 112 324.3 112 342V482H478V310H546V482H912V342C912 324.3 897.7 310 880 310ZM478 306H408C369.4 306 338 274.6 338 236C338 197.4 369.4 166 408 166C446.6 166 478 197.4 478 236V306ZM616 306H546V236C546 197.4 577.4 166 616 166C654.6 166 686 197.4 686 236C686 274.6 654.6 306 616 306Z" fill="rgba(236, 160, 72, .7)" />
         </svg>
 
-        <p>В подарунок Ви отримаєте гайд 'Гормони щастя'</p>
+        <p>В подарунок Ви отримаєте гайд &apos;Гормони щастя&apos;</p>
       </div>
 
       <div id="racion" />
@@ -222,7 +221,7 @@ const Home = () => {
               </div>
               {
                 typeMenu
-                  ? <p className={styles.calNeed}>{`При вказаних вище параметрах Вам необхідно дотримуватись раціону в ${typeMenu} калоріях`}</p>
+                  ? <p className={styles.calNeed}>{`При вказаних вище параметрах Вам необхідно дотримуватись раціону в ${typeMenu} калорій`}</p>
                   : null
               }
             </>
