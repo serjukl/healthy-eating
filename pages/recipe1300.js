@@ -9,7 +9,7 @@ const recipe1600 = () => {
           <p>
             Подарунковий гайд 'Гормони щастя'
           </p>
-          <a href="/TXT.rtf" download>Завантажити</a>
+          <a href="/present.pdf" download>Завантажити</a>
         </div>
       )
 }
