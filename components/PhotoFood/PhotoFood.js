@@ -12,9 +12,9 @@ const PhotoFood = () => (
       <div className={styles.leftPart}>
         <img src="/images/flower.jpg" alt="/" className={styles.image} />
         <ul>
-          <li>Сповнює енергією.</li>
-          <li>Звичні для організму продукти.</li>
-          <li>Безпечно для організму.</li>
+          <li>Сповнює енергією</li>
+          <li>Звичні для організму продукти</li>
+          <li>Безпечно для організму</li>
         </ul>
       </div>
     </div>
