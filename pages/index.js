@@ -262,7 +262,7 @@ const Home = () => {
                 {
                   choosedMenu !== null
                     ? (
-                      <Title text={ `Ви обрали раціон із калорійністю ${choosedMenu}` } />
+                      <Title text={`Ви обрали раціон із калорійністю ${choosedMenu}`} />
                     )
                     : null
                 }
@@ -288,7 +288,7 @@ const Home = () => {
                     : null
                 }
               </div>
-              
+
             </>
           )
           : null
