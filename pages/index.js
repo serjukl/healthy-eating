@@ -16,6 +16,7 @@ const Home = () => {
   const [getResult, getResultHandler] = useState(null)
   const [getMenu, getMenuHandler] = useState(null)
   const [typeMenu, typeMenuHandler] = useState(null)
+  const [choosedMenu, choosedMenuHandler] = useState(null)
 
   const FAQestions = [
     {
@@ -36,7 +37,8 @@ const Home = () => {
     'ПОДІЛИТИСЬ ІЗ БЛИЗЬКИМИ, АДЖЕ РАЦІОН ПІДІЙДЕ ВСІЄЇ СІМ’Ї'
   ]
   const checkPercent = (calories) => {
-    if (calories > 1550) {
+    if (calories > 1650) return calories
+    if (calories > 1550 && calories < 1650) {
       return 1600
     }
     if (calories > 1450 && calories < 1550) {
@@ -56,12 +58,12 @@ const Home = () => {
     getMenuHandler(arr)
     const caloriesTemp = getResult.caloriesWithSport.value
     const calories = (caloriesTemp - ((caloriesTemp / 100) * 20))
-    const result = checkPercent(calories)
+    const result = checkPercent(caloriesTemp)
     if (arr === 1) {
-      typeMenuHandler(+result - 100)
+      typeMenuHandler(checkPercent(calories)) // хочу схуднути
     }
     if (arr === 0) {
-      typeMenuHandler(result)
+      typeMenuHandler(result) // підтримати вагу
     }
   }
 
@@ -149,11 +151,12 @@ const Home = () => {
       </div>
       <div className={styles.aboutRacion}>
         <p>
-          План харчування складає середземноморська дієта,
-          яка являється по суті збалансованим здоровим харчуванням.
-          Вона не є проти показаною і не несе загрози для здоров’я.
-          Меню збалансоване ,складає всі необхідні для організму речовини,
-          і тому не забороняється людям із захворюваннями , вагітним і годуючим.
+          План харчування складає середземноморський раціон,
+          який являється по суті збалансованим здоровим харчуванням.
+          Він не є протипоказаний і не несе загрози для здоров’я.
+          Меню збалансоване, складає всі необхідні для організму речовини,
+          і тому не забороняється людям із захворюваннями,
+          вагітним та годуючим.
         </p>
         {/* <button type="button">
           ОЗНАЙОМИТИСЬ
@@ -186,11 +189,7 @@ const Home = () => {
                 calories={getResult.calories}
                 caloriesWithSport={getResult.caloriesWithSport}
               />
-              {
-                typeMenu
-                  ? <p className={styles.calNeed}>{`При вказаних вище параметрах Вам необхідно дотримуватись раціону в ${typeMenu} калорій`}</p>
-                  : null
-              }
+
               <div className={styles.btnContainer}>
                 <button
                   type="button"
@@ -206,8 +205,71 @@ const Home = () => {
                 >
                   Хочу схуднути
                 </button>
+
+              </div>
+              {
+                typeMenu
+                  ? <p className={styles.calNeed}>{`При вказаних вище параметрах Вам необхідно дотримуватись раціону в ${typeMenu} калорій`}</p>
+                  : null
+              }
+              <div className={styles.btnContainer}>
                 {
-                  getMenu !== null
+                  typeMenu
+                    ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => choosedMenuHandler(1200)}
+                          style={{ backgroundColor: choosedMenu === 1200 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                        >
+                          1200
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => choosedMenuHandler(1300)}
+                          style={{ backgroundColor: choosedMenu === 1300 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                        >
+                          1300
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => choosedMenuHandler(1400)}
+                          style={{ backgroundColor: choosedMenu === 1400 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                        >
+                          1400
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => choosedMenuHandler(1500)}
+                          style={{ backgroundColor: choosedMenu === 1500 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                        >
+                          1500
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => choosedMenuHandler(1600)}
+                          style={{ backgroundColor: choosedMenu === 1600 ? 'rgba(236, 160, 72, 0.7)' : 'transparent' }}
+                        >
+                          1600
+                        </button>
+                      </>
+                    )
+                    : null
+                }
+
+              </div>
+              <div className={styles.btnContainer}>
+                {
+                  choosedMenu !== null
+                    ? (
+                      <Title text={ `Ви обрали раціон із калорійністю ${choosedMenu}` } />
+                    )
+                    : null
+                }
+              </div>
+              <div className={styles.btnContainer}>
+                {
+                  choosedMenu !== null
                     ? (
                       <LiqPayPay
                         publicKey="sandbox_i39047898628"
@@ -225,8 +287,8 @@ const Home = () => {
                     )
                     : null
                 }
-
               </div>
+              
             </>
           )
           : null
