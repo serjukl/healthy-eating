@@ -312,7 +312,7 @@ const Home = () => {
           ))
         }
       </div>
-      <footer className={styles.footer}> 
+      <footer className={styles.footer}>
         <p>контактна інформація +380 96 241 54 85</p>
         <p>serjukl98@gmail.com</p>
         <div>
@@ -334,7 +334,7 @@ const Home = () => {
           </svg>
         </div>
 
-        <a href="https://prolum.com.ua/privacypolicy/">oferta</a>
+        <a href="/oferta">oferta</a>
       </footer>
     </div>
   )
