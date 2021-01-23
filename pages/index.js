@@ -277,13 +277,13 @@ const Home = () => {
                   choosedMenu !== null
                     ? (
                       <LiqPayPay
-                        publicKey="sandbox_i39047898628"
-                        privateKey="sandbox_KKI5zgxZUbKFhSMNamE1ekbFL9faSYy36PXuDVpF"
+                        publicKey="i58423322834"
+                        privateKey="4D76uYo260l9k9vJfwLcRhxb4a2DL2QZ7mf8v5Tw"
                         amount="499"
                         description="Payment for product"
                         currency="UAH"
                         orderId={Math.floor(1 + Math.random() * 900000000)}
-                        result_url={`https://foodcoachiryna.com.ua/recipe${typeMenu}`}
+                        result_url={`https://foodcoachiryna.com.ua/recipe${choosedMenu}`}
                         server_url="https://www.liqpay.ua/checkout/i58423322834"
                         product_description="Online courses"
                         style={{ margin: '8px' }}
