@@ -296,7 +296,7 @@ const Home = () => {
                   choosedMenu !== null
                     ? (
                       <>
-                        <a href="https://secure.wayforpay.com/button/be907bf0484e6">
+                        <a className={styles.button} href="https://secure.wayforpay.com/button/be907bf0484e6">
                           {' '}
                           <span>Оплатити 499</span>
                         </a>
