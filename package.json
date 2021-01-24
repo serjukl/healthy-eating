@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "css-loader": "2.1.1",
+    "fs": "^0.0.1-security",
     "liqpay": "^0.0.1",
     "next": "10.0.3",
     "next-images": "^1.6.2",
@@ -21,7 +22,8 @@
     "prettier": "^2.1.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-liqpay": "^1.3.0"
+    "react-liqpay": "^1.3.0",
+    "wayforpay": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
