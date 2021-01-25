@@ -324,6 +324,9 @@ const Home = () => {
           ))
         }
       </div>
+      <footer className={styles.footer}>
+        <a href="/terms">Terms and conditions</a>
+      </footer>
     </div>
   )
 }

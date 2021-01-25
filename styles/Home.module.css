@@ -359,6 +359,10 @@
   color: #fff;
   font-size: 1.5em;
 }
+.footer {
+  padding: 2em;
+  background-color: rgba(236, 160, 72, 0.7);
+}
 @media screen and (max-width: 1175px) {
   .titleContainer {
     -webkit-box-pack: center;
